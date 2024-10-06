@@ -45,12 +45,24 @@ const BookingDetails = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Booking Details</h1>
-      <p>This Booking is with <strong>{booking.doctor_name}</strong> for <strong>{booking.service}</strong> and it ends at <strong>{booking.end_time}</strong>.</p>
-      <Link href="/bookings" className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-200">
-        Back to Bookings
-      </Link>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+      <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Booking Details</h1>
+        <p className="text-lg text-gray-700 mb-4">
+          This Booking is with <strong className="text-blue-600">{booking.doctor_name}</strong> for 
+          <strong className="text-blue-600"> {booking.service}</strong> and it ends at 
+          <strong className="text-blue-600"> {booking.end_time}</strong>.
+        </p>
+        <p className="text-sm text-gray-500 mb-4">
+          Date: <strong className="text-blue-600">{booking.date.split("T")[0]}</strong>
+        </p>
+        <Link
+          href="/bookings"
+          className="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 shadow hover:shadow-lg"
+        >
+          Back to Bookings
+        </Link>
+      </div>
     </div>
   );
 };
